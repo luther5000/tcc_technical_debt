@@ -1,0 +1,112 @@
+\begin{figure}
+    \centering
+    \caption{Nível de implementação por fluxo do CdU 15}
+    \vspace{-1em}
+    \resizebox{0.95\textwidth}{!}{
+    \begin{tikzpicture}
+        \footnotesize
+        \begin{axis}[
+            xbar stacked,
+            width=12cm, 
+            height=9cm, % Aumente se houver muitos fluxos
+            xmin=0, xmax=7, % AJUSTADO: Agora travado em 7 respondentes
+            xtick={0,1,2,3,4,5,6,7}, % AJUSTADO: Régua até 7
+            xlabel={Número de Respondentes},
+            ylabel={Fluxos do CdU 15},
+            symbolic y coords={{Fluxo de Exceção 3}, {Fluxo de Exceção 2}, {Fluxo de Exceção 1}, {Fluxo Alternativo 3}, {Fluxo Alternativo 2}, {Fluxo Alternativo 1}, {Fluxo Principal}},
+            ytick=data,
+            axis x line*=bottom,
+            axis y line*=left,
+            xmajorgrids=true,
+            grid style={dashed, gray!30},
+            bar width=18pt,
+            legend style={
+                at={(0.5,-0.16)}, 
+                anchor=north, 
+                xshift=-1.8cm,
+                legend columns=3, 
+                draw=none,
+                font=\scriptsize,
+                /tikz/every even column/.append style={column sep=0.5cm}
+            },
+            nodes near coords={
+                \pgfmathfloatifflags{\pgfplotspointmeta}{0}{}{\pgfmathprintnumber{\pgfplotspointmeta}}
+            },
+            nodes near coords align={center},
+            every node near coord/.append style={font=\footnotesize\bfseries, text=black!80},
+        ]
+        
+        % Votos 1: Nada / Não Implementado (Vermelho)
+        \addplot[fill=mutedRed, draw=mutedRed!80!black, thick] coordinates {
+            (0,{Fluxo Principal}) 
+            (1,{Fluxo Alternativo 1}) 
+            (1,{Fluxo Alternativo 2})
+            (1,{Fluxo Alternativo 3})
+            (1,{Fluxo de Exceção 1})
+            (1,{Fluxo de Exceção 2})
+            (1,{Fluxo de Exceção 3})
+        };
+        
+        % Votos 2 (Laranja)
+        \addplot[fill=mutedOrange, draw=mutedOrange!80!black, thick] coordinates {
+            (1,{Fluxo Principal}) 
+            (0,{Fluxo Alternativo 1}) 
+            (0,{Fluxo Alternativo 2})
+            (0,{Fluxo Alternativo 3})
+            (0,{Fluxo de Exceção 1})
+            (0,{Fluxo de Exceção 2})
+            (0,{Fluxo de Exceção 3})
+        };
+        
+        % Votos 3 (Amarelo)
+        \addplot[fill=mutedYellow, draw=mutedYellow!80!black, thick] coordinates {
+            (0,{Fluxo Principal}) 
+            (1,{Fluxo Alternativo 1}) 
+            (1,{Fluxo Alternativo 2})
+            (1,{Fluxo Alternativo 3})
+            (1,{Fluxo de Exceção 1})
+            (1,{Fluxo de Exceção 2})
+            (1,{Fluxo de Exceção 3})
+        };
+        
+        % Votos 4 (Verde Claro)
+        \addplot[fill=mutedLGreen, draw=mutedLGreen!80!black, thick] coordinates {
+            (2,{Fluxo Principal}) 
+            (1,{Fluxo Alternativo 1}) 
+            (1,{Fluxo Alternativo 2})
+            (1,{Fluxo Alternativo 3})
+            (0,{Fluxo de Exceção 1})
+            (0,{Fluxo de Exceção 2})
+            (0,{Fluxo de Exceção 3})
+        };
+        
+        % Votos 5: Totalmente Implementado (Verde Médio com bom contraste)
+        \addplot[fill=mutedDGreen, draw=mutedDGreen!80!black, thick] coordinates {
+            (1,{Fluxo Principal}) 
+            (0,{Fluxo Alternativo 1}) 
+            (0,{Fluxo Alternativo 2})
+            (0,{Fluxo Alternativo 3})
+            (1,{Fluxo de Exceção 1})
+            (1,{Fluxo de Exceção 2})
+            (1,{Fluxo de Exceção 3})
+        };
+        
+        % Votos: DESCONHEÇO (Cinza Neutro)
+        \addplot[fill=mutedGray, draw=mutedGray!80!black, thick] coordinates {
+            (3,{Fluxo Principal}) 
+            (4,{Fluxo Alternativo 1}) 
+            (4,{Fluxo Alternativo 2})
+            (4,{Fluxo Alternativo 3})
+            (4,{Fluxo de Exceção 1})
+            (4,{Fluxo de Exceção 2})
+            (4,{Fluxo de Exceção 3})
+        };
+
+        \legend{1 -- Nada Implementado, 2 -- Pouco Implementado, 3 -- Parcialmente Implementado, 4 -- Muito Implementado, 5 -- Totalmente Implementado, Desconheço Estado da Implementação}
+        
+        \end{axis}
+    \end{tikzpicture}
+    }
+    \vspace{-0.5em}
+    {\footnotesize \textbf{Fonte:} Elaborado pelo autor.}
+\end{figure}

@@ -1,0 +1,42 @@
+\begin{quadro}[t]
+    \centering
+    \caption{Exemplo do Caso de Uso 3 (CdU3) especificado}
+    \label{qua:exemplo_cdu3}
+    \fcolorbox{black}{backcolour}{% 
+        \begin{minipage}{0.9\textwidth}\small%
+            \vspace{3pt}%
+            \noindent\textbf{\normalsize CdU3 - Visualização de oportunidades}\vspace{5pt}\\
+            \textbf{Agente:} Usuário\\
+            \textbf{Pré-Condições:} O usuário está dentro do sistema\\
+            \textbf{Pós-Condições:} O usuário visualiza as oportunidades ou os detalhes de uma oportunidade \\
+            \textbf{Prioridade:} Alta\\
+            \textbf{Fluxo Principal:}
+            \begin{enumerate}[topsep=0pt]
+                \itemsep0em
+                \item O usuário acessa a página principal do sistema ou a opção “Oportunidades”
+                \item O sistema busca oportunidades 
+                \item O sistema exibe as oportunidades retornadas junto da opção “Visualizar Oportunidade” e as opções de filtro para uma busca refinada 
+                \item O usuário clica na opção “Visualizar Oportunidade”
+                \item O sistema resgata os detalhes da oportunidade e as perguntas e respostas feitas
+                \item O sistema exibe mais informações sobre a oportunidade selecionada junto das perguntas e respostas já feitas
+            \end{enumerate}
+            \textbf{Fluxo Alternativo:}\\
+            No \textit{passo 3} do \textit{fluxo principal}, se o usuário desejar a adição de filtros na busca:
+            \begin{enumerate}[topsep=0pt]
+                \itemsep0em 
+                \item O usuário insere os filtros desejados
+                \item O sistema realiza uma nova busca utilizando os filtros informados
+                \item Retorna para o \textit{passo 3} do \textit{fluxo principal}
+            \end{enumerate}
+            \textbf{Fluxo de Exceção:}\\
+            No \textit{passo 2} do \textit{fluxo principal} ou do \textit{fluxo alternativo}, se a busca não retornou resultados:
+            \begin{enumerate}[topsep=0pt]
+                \item O sistema informa que não existem oportunidades cadastradas no sistema que atendem os filtros inseridos 
+            \end{enumerate}%
+            \vspace{5pt}%
+        \end{minipage}
+    }
+
+    \vspace{5pt}
+    \hspace*{0.75cm}\raggedright{\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{quadro}

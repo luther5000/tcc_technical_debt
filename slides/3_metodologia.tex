@@ -1,0 +1,37 @@
+\section{Metodologia}
+
+\begin{frame}{Visão Geral da Metodologia}
+  \textbf{Caracterização:} Relato de experiência (Estudo de caso prático no SFM).
+
+  \vspace{1em}
+
+  \begin{figure}
+      \centering
+      \caption{Fases de execução da metodologia (não linear)}
+
+      \vspace{-1em}
+    \begin{tikzpicture}[
+      node distance=1.5cm and 2cm,
+      stepbox/.style={rectangle, rounded corners, draw=black, thick, fill=gray!10, minimum width=4.5cm, minimum height=1.5cm, text centered, text width=3.5cm},
+      arrow/.style={thick, -{Stealth[scale=1.2]}},
+      doublearrow/.style={thick, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}},
+      feedback/.style={thick, dashed, {Stealth[scale=1.2]}-{Stealth[scale=1.2]}, color=gray!80}
+    ]
+
+    % Definindo os Nós (Caixas)
+    \node (fase1) [stepbox] {\textbf{Fase 1}\\Delineamento e seleção da abordagem};
+    \node (fase2) [stepbox, right=of fase1] {\textbf{Fase 2}\\Procedimentos de elicitação e documentação};
+    \node (fase3) [stepbox, below=of fase2] {\textbf{Fase 3}\\Análise de rastreabilidade e cobertura};
+    \node (fase4) [stepbox, left=of fase3] {\textbf{Fase 4}\\Levantamento da percepção da equipe};
+
+    % Desenhando as setas principais
+    \draw [arrow] (fase1) -- (fase2);
+    \draw [doublearrow] (fase2) -- (fase3);
+    \draw [arrow] (fase3) -- (fase4);
+
+    \end{tikzpicture}
+
+    \vspace{0.5em}
+    {\footnotesize \textbf{Fonte:} Elaborado pelo autor.}
+  \end{figure}
+\end{frame}

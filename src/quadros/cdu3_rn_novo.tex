@@ -1,0 +1,36 @@
+\begin{quadro}[t]
+    \centering
+    \caption{Mudanças feitas no Caso de Uso 3 (CdU3) após comparação do documento de requisitos com os casos de teste}
+    \label{qua:novo_cdu3}
+    \fcolorbox{black}{backcolour}{%
+        \begin{minipage}{0.9\textwidth}\small%
+            \vspace{3pt}%
+            \noindent\textbf{\normalsize CdU3 - Visualização de oportunidades}\vspace{5pt}\\
+            \noindent...\\
+            \textbf{Fluxo Principal:}\\
+            \noindent...\\
+            \textbf{Fluxo Alternativo 1 (Adição de filtros):}\\
+            No \textit{passo 3} do \textit{fluxo principal}, se o usuário desejar a adição de filtros (data, município ou título) na busca:
+            \begin{enumerate}[topsep=0pt]
+                \itemsep0em
+                \item O usuário insere os filtros desejados
+                \item O sistema realiza uma nova busca utilizando os filtros informados
+                \item Retorna para o \textit{passo 3} do \textit{fluxo principal}
+            \end{enumerate}
+            \textbf{Fluxo Alternativo 2 (Aplicação de ordenação):}\\
+            No \textit{passo 3} do \textit{fluxo principal}, se o usuário desejar a aplicação de uma ordenação (orçamento ou data) dos resultados:
+            \begin{enumerate}[topsep=0pt]
+                \itemsep0em
+                \item O usuário seleciona as formas de ordenação desejadas
+                \item O sistema exibe as oportunidades segundo a ordenação informada
+                \item Retorna para o \textit{passo 3} do \textit{fluxo principal}
+            \end{enumerate}
+            \textbf{Fluxo de Exceção:}\\
+            ...
+            \vspace{5pt}%
+        \end{minipage}
+    }
+    
+    \vspace{5pt}
+    \hspace*{0.75cm}\raggedright{\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{quadro}

@@ -1,0 +1,66 @@
+\begin{figure}[t]
+    \centering 
+    \label{fig:cobertura_fluxos}
+    \caption{Cobertura de fluxos por Caso de Uso na Matriz de Rastreabilidade}
+    \vspace{-1em}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \begin{axis}[
+            xbar stacked, 
+            width=14cm, 
+            height=7cm, 
+            enlarge y limits=0.15, % Dá um respiro maior nas margens superior e inferior
+            xmin=0, 
+            xlabel={Quantidade de Fluxos},
+            ylabel={Casos de Uso},
+            ylabel style={xshift=-10pt}, % Empurra o texto do eixo Y mais para a esquerda
+            symbolic y coords={CdU10, CdU03, CdU02, CdU01},
+            ytick=data, 
+            % --- MELHORIAS ESTÉTICAS ---
+            axis x line*=bottom, % Deixa apenas a linha do eixo X embaixo
+            axis y line*=left,   % Deixa apenas a linha do eixo Y à esquerda
+            xmajorgrids=true,    % Ativa a grade no eixo X
+            grid style={dashed, gray!30}, % Deixa a grade tracejada e discreta
+            bar width=18pt,      % Afina as barras para ficarem mais elegantes
+            % Legenda sem borda e com mais espaço entre as palavras
+            legend style={at={(0.5,-0.19)}, anchor=north, legend columns=-1, draw=none, /tikz/every even column/.append style={column sep=0.5cm}}, 
+            % Código que imprime o número na barra apenas se ele for maior que zero
+            nodes near coords={
+                \pgfmathfloatifflags{\pgfplotspointmeta}{0}{}{\pgfmathprintnumber{\pgfplotspointmeta}}
+            },
+            nodes near coords align={center}, 
+            % Formatação do número dentro da barra (negrito e tamanho menor)
+            every node near coord/.append style={font=\footnotesize\bfseries, text=black!80},
+        ]
+        
+        % 1ª SÉRIE: Fluxos 100% Cobertos (Verde com borda mais escura)
+        \addplot[fill=mutedDGreen, draw=mutedDGreen!80!black, thick] coordinates {
+            (2,CdU01) 
+            (3,CdU02) 
+            (1,CdU03)
+            (1,CdU10)
+        };
+        
+        % 2ª SÉRIE: Fluxos Parcialmente Cobertos (Laranja com borda mais escura)
+        \addplot[fill=mutedOrange, draw=mutedOrange!80!black, thick] coordinates {
+            (0,CdU01) % Este zero não será impresso, deixando o gráfico limpo!
+            (3,CdU02) 
+            (2,CdU03)
+            (2,CdU10)
+        };
+
+        % 3ª SÉRIE: Fluxos Não Cobertos (Vermelho suave com borda)
+        \addplot[fill=mutedRed, draw=mutedRed!80!black, thick] coordinates { 
+            (2,CdU01) 
+            (1,CdU02) 
+            (1,CdU03)
+            (4,CdU10)
+        };
+        
+        \legend{Totalmente Cobertos, Parcialmente Cobertos, Não Cobertos}
+        
+        \end{axis}
+    \end{tikzpicture}
+    }
+    {\footnotesize \textbf{Fonte:} Elaborado pelo autor.}
+\end{figure}

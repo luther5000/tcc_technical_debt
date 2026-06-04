@@ -1,0 +1,32 @@
+\begin{quadro}[t]
+    \centering
+    \caption{Exemplo de cenários de teste estruturados em formato BDD (sintaxe Gherkin)}
+    \label{qua:exemplo_bdd}
+    
+    \fcolorbox{black}{backcolour}{% 
+        \begin{minipage}{0.9\textwidth}\small%
+            \vspace{3pt}%
+            \noindent\normalsize{\textcolor{blue}{Cenário}: Saque com saldo suficiente}\vspace{3pt}\\
+            \hspace*{1.25cm}\textcolor{red}{DADO} que a conta possui saldo disponível\\
+            \hspace*{1.25cm}\textcolor{red}{E} que o cartão inserido é válido\\ 
+            \hspace*{1.25cm}\textcolor{red}{E} que o terminal possui cédulas suficientes\\
+            \hspace*{1.25cm}\textcolor{red}{QUANDO} o cliente solicita o resgate do dinheiro\\
+            \hspace*{1.25cm}\textcolor{red}{ENTÃO} a conta deve ser debitada no valor correspondente\\
+            \hspace*{1.25cm}\textcolor{red}{E} o dinheiro deve ser dispensado\\
+            \hspace*{1.25cm}\textcolor{red}{E} o cartão deve ser ejetado\\
+            
+            \noindent\normalsize{\textcolor{blue}{Cenário}: Saque com saldo insuficiente}\vspace{3pt}\\
+            \hspace*{1.25cm}\textcolor{red}{DADO} que a conta não possui saldo disponível\\
+            \hspace*{1.25cm}\textcolor{red}{E} que o cartão inserido é válido\\ 
+            \hspace*{1.25cm}\textcolor{red}{E} que o terminal possui cédulas suficientes\\
+            \hspace*{1.25cm}\textcolor{red}{QUANDO} o cliente solicita o resgate do dinheiro\\
+            \hspace*{1.25cm}\textcolor{red}{ENTÃO} a transação deve ser recusada\\
+            \hspace*{1.25cm}\textcolor{red}{E} o saldo da conta deve permanecer inalterado\\
+            \hspace*{1.25cm}\textcolor{red}{E} uma mensagem de saldo insuficiente deve ser exibida\\
+            \hspace*{1.25cm}\textcolor{red}{E} o cartão deve ser ejetado
+        \end{minipage}
+    }
+
+    \vspace{5pt}
+    \hspace*{0.75cm}\raggedright{\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{quadro}

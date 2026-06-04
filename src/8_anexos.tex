@@ -1,0 +1,1119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANEXO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\centering{APÊNDICE A}}
+\addcontentsline{toc}{section}{APÊNDICES}
+
+O instrumento de pesquisa apresentado a seguir foi elaborado por meio da plataforma \textit{Google Forms} e aplicado à equipe técnica do SFM, com o intuito de embasar a análise de percepção discutida no escopo deste trabalho.
+
+\includepdf[pages=1-14, 
+    pagecommand={}, 
+    width=\textwidth,
+    height=\textheight,
+    keepaspectratio]{pdf/Pesquisa de Implementação e Contribuição de Requisitos do Sistema de Fomento ao Microempreendedor_redacted}
+
+\section*{\centering{APÊNDICE B}}
+
+Neste apêndice são apresentados a documentação de requisitos do SFM, subdivididos em Casos de Uso (CdU), Regras de Negócio (RN) e Dicionários de Dados (DD).
+
+\vspace{10pt}
+\noindent{\large\textbf{Casos de Uso}}
+\vspace{10pt}
+
+%\noindent\textbf{\normalsize CdU1 - Realizar login}\\
+%\textbf{Agente:} Usuário \\
+%\textbf{Pré-Condições:} O usuário não está logado no sistema.\\
+%\textbf{Pós-Condições:} O usuário estará logado no sistema.\\
+%\textbf{Prioridade:} Média \vspace{3pt}\\
+%\noindent\textbf{Fluxo Principal:}
+%\vspace{-5pt} 
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O usuário acessa a opção de login do sistema.
+%    \item O sistema exibe para o usuário as opções de login com “CPF” e “senha” ou através do “Gov.br”.
+%    \item O usuário preenche as informações de CPF e senha.
+%    \item O sistema realiza a validação dos dados inseridos e verifica que eles estão corretos.
+%    \item O usuário é informado pelo sistema que está logado e é redirecionado para a tela inicial.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo Alternativo 1 (Gov.br):}\\
+%No passo 2 do fluxo principal, se o usuário seleciona a opção de login através do “Gov.br”:
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema redireciona o usuário para o site do Gov.br.
+%    \item O usuário realiza o login através do site Gov.br.
+%    \item O sistema valida a realização do login através do Gov.br.
+%    \item O fluxo retorna ao passo 5 do fluxo principal.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 1 (Dados incorretos):}\\
+%No passo 4 do fluxo principal, se o sistema validar que os dados inseridos estão incorretos:
+%    \begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%        \item O sistema informa ao usuário que as informações preenchidas estavam erradas.
+%        \item O sistema retorna para a tela de login.
+%    \end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 2 (Falha no Gov.br)}:\\
+%No passo 3 do fluxo alternativo 1, se o sistema valida que o usuário não realizou o login através do Gov.br:
+%    \begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%        \item O sistema informa que o login não foi realizado.
+%        \item O sistema retorna para a tela de login.
+%    \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{7pt}
+%\noindent\textbf{\normalsize CdU2 - Realizar cadastro}
+%\noindent\textbf{Agente:} Usuário \\
+%\textbf{Pré-Condições:} O usuário não está logado no sistema.\\
+%\textbf{Pós-Condições:} O usuário possui cadastro no sistema como MEI e está logado ou está na tela de login.\\
+%\textbf{Prioridade:} Média \vspace{3pt}\\
+%\noindent\textbf{Fluxo Principal:}
+%\vspace{-5pt} 
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O usuário acessa a tela de cadastro do sistema.
+%    \item O sistema exibe para o usuário os campos para preenchimento (DD01) e um campo “Confirme a Senha” junto dos botões de realizar cadastro e realizar login.
+%    \item O usuário preenche os campos descritos.
+%    \item O sistema utiliza a informação do campo CNPJ para resgatar informações existentes do usuário em outros serviços do governo.
+%    \item O usuário confirma o seu cadastro.
+%    \item O sistema valida as informações preenchidas pelo usuário.
+%    \item O sistema grava as informações.
+%    \item O sistema informa ao usuário que o cadastro foi realizado, realiza o login do usuário e o direciona para a página inicial.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo Alternativo 1 (Cadastro pelo Gov.br):}\\
+%O usuário é redirecionado para a tela de cadastro por estar fazendo seu primeiro login pelo Gov.br:
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O sistema preenche as informações obtidas pelo login no Gov.br.
+%    \item O sistema exibe o formulário de cadastro com as informações preenchidas.
+%    \item O sistema retorna para o passo 3 do fluxo principal.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo Alternativo 2 (Redirecionamento para login):}\\
+%Até o passo 5 do fluxo principal, caso o usuário selecione a opção de realizar login:
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O usuário é redirecionado para a tela de realizar login.
+%    \item O fluxo de execução segue segundo o CdU1.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 1 (Um ou mais campos obrigatórios em branco):}\\
+%No passo 6 do fluxo principal, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O sistema informa ao usuário que é necessário o preenchimento de todos os campos obrigatórios.
+%    \item O sistema retorna para a tela de cadastro com os dados que o usuário preencheu.
+%    \item O sistema destaca em vermelho o campo que não foi preenchido.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 2 (CPF/CNPJ ou email já cadastrado):}\\
+%No passo 6 do fluxo principal, se o sistema validar que o CPF, CNPJ ou email inserido já foi cadastrado no sistema (RN02):
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O sistema informa ao usuário que o CPF, CNPJ ou email informado já está cadastrado no sistema.
+%    \item O sistema retorna para a tela de cadastro com os dados que o usuário preencheu.
+%    \item O sistema destaca em vermelho o campo de CPF, CNPJ ou email.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 3 (Senhas diferentes):}\\
+%No passo 6 do fluxo principal, se o sistema validar que as senhas inseridas (Senha, Confirme a Senha) não são iguais (RN08):
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O sistema informa ao usuário que as senhas inseridas devem ser iguais.
+%    \item O sistema retorna para a tela de cadastro com os dados que o usuário preencheu.
+%    \item O sistema destaca em vermelho os campos de Senha e Confirme a Senha.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 4 (Valores inválidos):}\\
+%No passo 6 do fluxo principal, se o sistema validar que algum dos dados inseridos for inválido (RN01, RN03, RN04, RN06, RN07, DD01):
+%\vspace{-5pt}
+%\begin{enumerate}[noitemsep, topsep=0pt, parsep=0pt]
+%    \item O sistema informa ao usuário qual campo está inválido.
+%    \item O sistema retorna para a tela de cadastro com os dados que o usuário preencheu.
+%    \item O sistema destaca em vermelho o campo inválido.
+%\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU3 - Visualização de oportunidades}\\
+\textbf{Agente:} Usuário \\ 
+\textbf{Pré-Condições:} O usuário acessou o sistema.\\
+\textbf{Pós-Condições:} O usuário visualiza as oportunidades ou os detalhes de uma oportunidade específica.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O usuário acessa a página principal do sistema ou a opção “Oportunidades”.
+    \item O sistema busca as oportunidades disponíveis.
+    \item O sistema exibe as oportunidades retornadas junto da opção “Visualizar Oportunidade”, as opções de filtro para uma busca refinada e as opções de ordenação.
+    \item O usuário clica na opção “Visualizar Oportunidade”.
+    \item O sistema resgata os detalhes da oportunidade e as perguntas e respostas já realizadas.
+    \item O sistema exibe mais informações sobre a oportunidade selecionada junto das perguntas e respostas.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Adição de filtros):}\\
+No passo 3 do fluxo principal, se o usuário desejar a adição de filtros (data, município ou título) na busca:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O usuário insere os filtros desejados.
+    \item O sistema realiza uma nova busca utilizando os filtros informados.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 2 (Aplicação de ordenação):}\\
+No passo 3 do fluxo principal, se o usuário desejar a aplicação de uma ordenação (orçamento ou data) dos resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O usuário seleciona as formas de ordenação desejadas.
+    \item O sistema exibe as oportunidades segundo a ordenação informada.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Nenhum resultado encontrado):}\\
+No passo 2 do fluxo principal ou do fluxo alternativo 1, se a busca não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao usuário que não existem oportunidades cadastradas no sistema que atendam aos critérios ou filtros inseridos.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU4 - Cadastro de Propostas}\\
+\noindent\textbf{Agente:} Prestador de Serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema, existe uma oportunidade no sistema, a oportunidade permite o cadastro de propostas (RN11) e o MEI ainda não cadastrou uma proposta para aquela oportunidade (RN10).\\ 
+\textbf{Pós-Condições:} O MEI possuirá uma proposta cadastrada ou um rascunho salvo para aquela oportunidade.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:} 
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI está visualizando os detalhes de uma oportunidade e seleciona a opção “Fazer Proposta”. 
+    \item O sistema verifica se existe um rascunho para aquela oportunidade. Caso sim, resgata o rascunho; caso não, inicia um novo cadastro. 
+    \item O sistema recupera as informações de perfil do MEI. 
+    \item O sistema exibe as informações de perfil do MEI junto do formulário contendo os campos a serem preenchidos de acordo com o DD02. No caso do usuário já possuir um rascunho, o sistema também exibe o conteúdo que havia sido preenchido. 
+    \item O MEI preenche os campos do formulário. 
+    \item O MEI insere os arquivos solicitados. 
+    \item O sistema valida imediatamente o formato e o tamanho do arquivo (DD02). 
+    \item O MEI confirma o envio da proposta.
+    \item O sistema realiza a validação das informações inseridas. 
+    \item O sistema guarda as informações da proposta com o status ``em análise". 
+    \item O sistema informa ao MEI que a proposta foi realizada. 
+    \item O sistema retorna para a parte de detalhes da oportunidade. 
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Salvar Rascunho):}\\ 
+Até o passo 7 do fluxo principal, se o MEI salvar o cadastro como rascunho: 
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema guarda as informações inseridas como rascunho. 
+    \item O sistema informa ao usuário que os dados foram salvos.
+    \item O sistema retorna para a tela de detalhes da oportunidade. 
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Arquivo fora dos padrões):}\\ 
+No passo 7 do fluxo principal, se o MEI insere um documento fora dos padrões (DD02): 
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra que o documento não pode ser enviado. 
+    \item O sistema mostra os tipos permitidos de documentos e os tamanhos máximos.
+    \item O sistema retorna para a tela de cadastro de proposta com os dados já preenchidos.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Erro no envio de arquivo):}\\ 
+No passo 7 do fluxo principal, se o documento enviado pelo MEI tiver um erro de envio:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe uma opção de realizar o envio do documento novamente. 
+    \item O fluxo retorna ao passo 6 do fluxo principal. 
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (Campos em branco):}\\ 
+No passo 9 do fluxo principal, se o MEI não preencheu algum dos campos obrigatórios: 
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao MEI que é necessário o preenchimento de todos os campos obrigatórios. 
+    \item O sistema retorna para a tela de cadastro com os dados já preenchidos. 
+    \item O sistema destaca o campo não preenchido. 
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU5 - Visualização de ``minhas propostas''}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema.\\ 
+\textbf{Pós-Condições:} O MEI visualiza as suas propostas, os detalhes de uma proposta ou os detalhes de uma oportunidade.\\
+\textbf{Prioridade:} Média \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI acessa a página de ``minhas propostas''.
+    \item O sistema busca as propostas já feitas pelo MEI.
+    \item O sistema exibe as propostas retornadas e seus respectivos status junto das opções ``Visualizar Proposta'', ``Visualizar Oportunidade'' e opções de filtro para uma busca refinada.
+    \item O usuário clica na opção ``Visualizar Proposta''.
+    \item O sistema exibe mais informações sobre a proposta selecionada junto dos botões de edição e de exclusão da proposta (RN25).
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Adição de filtros):}\\
+No passo 3 do fluxo principal, se o usuário desejar a adição de filtros na busca:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O usuário insere os filtros desejados.
+    \item O sistema realiza uma nova busca utilizando os filtros informados.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 2 (Visualizar Oportunidade):}\\
+No passo 4 do fluxo principal, se o usuário acessar a opção ``Visualizar Oportunidade'':
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema recupera as informações da oportunidade relacionada àquela proposta.
+    \item O sistema exibe as informações da oportunidade (como no passo 5 do fluxo principal do CdU3).
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Nenhum resultado encontrado):}\\
+No passo 2 do fluxo principal ou do fluxo alternativo 1, se a busca não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao MEI que não existem propostas cadastradas que atendam aos critérios de busca.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU6 - Visualização de ``meus rascunhos''}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema.\\ 
+\textbf{Pós-Condições:} O MEI visualiza os seus rascunhos ou o formulário de cadastro de proposta.\\
+\textbf{Prioridade:} Média \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI acessa a página de ``meus rascunhos''.
+    \item O sistema busca os rascunhos já salvos pelo MEI.
+    \item O sistema exibe os rascunhos retornados junto da opção ``Continuar Cadastro'' para cada um e opções de filtro para uma busca refinada.
+    \item O usuário clica na opção ``Continuar Cadastro''.
+    \item O sistema valida se ainda é possível submeter propostas para aquela oportunidade.
+    \item O sistema resgata as informações do rascunho.
+    \item O sistema direciona o usuário para a tela de cadastro de propostas com as informações resgatadas (conforme o CdU4).
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Adição de filtros):}\\
+No passo 3 do fluxo principal, se o usuário desejar a adição de filtros na busca:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O usuário insere os filtros desejados.
+    \item O sistema realiza uma nova busca utilizando os filtros informados.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Nenhum resultado encontrado):}\\
+No passo 2 do fluxo principal ou do fluxo alternativo 1, se a busca não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao MEI que não existem rascunhos salvos que atendam aos critérios de busca.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Prazo de submissão encerrado):}\\
+No passo 5 do fluxo principal, se o prazo para submissão de propostas da oportunidade tiver acabado (RN11):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao usuário que a oportunidade não permite mais o envio de propostas.
+    \item O sistema resgata as informações do rascunho.
+    \item O sistema exibe o formulário de cadastro com as informações resgatadas, mas sem permitir que o usuário o edite ou envie a proposta.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU7 - Perguntas sobre oportunidades}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema, existe uma oportunidade aberta no sistema e o MEI não possui três perguntas em análise naquela oportunidade (RN16).\\ 
+\textbf{Pós-Condições:} O prestador de serviços terá uma pergunta realizada.\\
+\textbf{Prioridade:} Baixa \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI seleciona a opção ``Visualizar Oportunidade''.
+    \item O sistema resgata os detalhes da oportunidade e as perguntas e respostas já realizadas.
+    \item O sistema exibe os detalhes da oportunidade, as perguntas e respostas já realizadas e uma opção de realizar uma nova pergunta.
+    \item O MEI seleciona a opção de realizar uma nova pergunta.
+    \item O sistema exibe um campo para o usuário escrever sua pergunta.
+    \item O MEI preenche o campo com sua pergunta e a envia.
+    \item O sistema guarda a pergunta realizada com o status ``em análise''.
+    \item O sistema confirma o envio da pergunta.
+    \item O sistema retorna para a tela de visualização da oportunidade.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{7pt}
+%\noindent\textbf{\normalsize CdU8 - Edição de Perfil do Prestador de Serviços}\\
+%\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+%\textbf{Pré-Condições:} O MEI está logado no sistema.\\ 
+%\textbf{Pós-Condições:} O MEI possuirá suas informações alteradas no sistema.\\
+%\textbf{Prioridade:} Baixa \vspace{3pt}\\
+%\noindent\textbf{Fluxo Principal:}
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O MEI acessa a opção de editar seu perfil.
+%    \item O sistema carrega o perfil do MEI.
+%    \item O sistema exibe os campos que podem ser editados pelo MEI (DD01).
+%    \item O MEI altera as informações desejadas em seu perfil.
+%    \item O MEI confirma as alterações realizadas.
+%    \item O sistema valida as alterações feitas pelo MEI.
+%    \item O sistema salva as alterações feitas.
+%    \item O sistema confirma para o MEI que as alterações foram salvas.
+%    \item O sistema retorna para a tela em que o MEI estava antes de acessar a edição de perfil.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo Alternativo 1 (Cancelamento da edição):}\\
+%Antes do passo 5 do fluxo principal, se o MEI cancelar a edição do perfil:
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema alerta o MEI que ele perderá as alterações realizadas e solicita uma confirmação.
+%    \item O MEI confirma o cancelamento.
+%    \item O sistema retorna para a tela em que o MEI estava antes de acessar a edição de perfil.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 1 (Um ou mais campos obrigatórios em branco):}\\
+%No passo 6 do fluxo principal, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao MEI que é necessário o preenchimento de todos os campos obrigatórios.
+%    \item O sistema retorna para a tela de edição com os dados que o MEI preencheu.
+%    \item O sistema destaca em vermelho o campo que não foi preenchido.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 2 (Valores inválidos):}\\
+%No passo 6 do fluxo principal, se o sistema validar que algum dos dados inseridos for inválido (RN03, RN04, RN06, DD01):
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao MEI qual campo está inválido.
+%    \item O sistema retorna para a tela de edição com os dados que o MEI preencheu.
+%    \item O sistema destaca em vermelho o campo inválido.
+%\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{7pt}
+%\noindent\textbf{\normalsize CdU9 - Cadastro de Agentes Públicos}\\
+%\noindent\textbf{Agente:} Agente público (manager)\\ 
+%\textbf{Pré-Condições:} O manager está logado no sistema.\\ 
+%\textbf{Pós-Condições:} O usuário estará cadastrado como um agente público.\\
+%\textbf{Prioridade:} Alta \vspace{3pt}\\
+%\noindent\textbf{Fluxo Principal:}
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O manager acessa a opção de cadastrar um novo agente público.
+%    \item O sistema exibe o formulário de cadastro de agentes públicos (DD04).
+%    \item O manager preenche as informações do usuário a ser cadastrado.
+%    \item O manager confirma o cadastro.
+%    \item O sistema valida as informações inseridas pelo manager.
+%    \item O sistema guarda as informações do cadastro.
+%    \item O sistema exibe a confirmação do cadastro do usuário.
+%    \item O sistema retorna para a tela em que o manager estava antes de selecionar a opção de cadastrar um novo agente público.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 1 (Um ou mais campos obrigatórios em branco):}\\
+%No passo 5 do fluxo principal, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao manager que é necessário o preenchimento de todos os campos obrigatórios.
+%    \item O sistema retorna para a tela de cadastro com os dados que o manager preencheu.
+%    \item O sistema destaca em vermelho o campo que não foi preenchido.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 2 (CPF já cadastrado):}\\
+%No passo 5 do fluxo principal, se o sistema validar que o CPF inserido já foi cadastrado no sistema (RN02):
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao manager que o CPF informado já está cadastrado no sistema.
+%    \item O sistema retorna para a tela de cadastro com os dados que o manager preencheu.
+%    \item O sistema destaca em vermelho o campo de CPF.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 3 (Senhas diferentes):}\\
+%No passo 5 do fluxo principal, se o sistema validar que as senhas inseridas (Senha, Confirme a Senha) não são iguais (RN08):
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao manager que as senhas inseridas devem ser iguais.
+%    \item O sistema retorna para a tela de cadastro com os dados que o manager preencheu.
+%    \item O sistema destaca em vermelho os campos de Senha e Confirme a Senha.
+%\end{enumerate}
+
+%\noindent\textbf{Fluxo de Exceção 4 (Valores inválidos):}\\
+%No passo 5 do fluxo principal, se o sistema validar que algum dos dados inseridos for inválido (RN01, DD04):
+%\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+%    \item O sistema informa ao manager qual campo está inválido.
+%    \item O sistema retorna para a tela de cadastro com os dados que o manager preencheu.
+%    \item O sistema destaca em vermelho o campo inválido.
+%\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU10 - Cadastro de Oportunidade}\\
+\noindent\textbf{Agente:} Agente Público\\ 
+\textbf{Pré-Condições:} O agente está logado no sistema.\\ 
+\textbf{Pós-Condições:} O agente terá uma oportunidade cadastrada ou um rascunho salvo no sistema.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O agente seleciona a opção de cadastrar uma oportunidade.
+    \item O sistema exibe o formulário de cadastro de oportunidade (DD03).
+    \item O agente preenche as informações do formulário.
+    \item O agente insere as mídias desejadas.
+    \item O sistema imediatamente valida o tamanho e o formato dos arquivos inseridos.
+    \item O agente envia o formulário.
+    \item O sistema valida as informações inseridas.
+    \item O sistema salva as informações do cadastro e adiciona o status como pendente (caso funcionário) ou como aprovado (caso manager).
+    \item O sistema confirma o cadastro para o agente.
+    \item O sistema retorna para a tela em que o agente estava antes de cadastrar a oportunidade.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Salvar Rascunho):}\\
+Até o passo 6 do fluxo principal, se o agente salvar o cadastro como rascunho:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema guarda as informações inseridas como rascunho.
+    \item O sistema informa ao agente que os dados foram salvos.
+    \item O sistema retorna para a tela que o agente estava antes de iniciar o cadastro de uma nova oportunidade.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Arquivo fora dos padrões):}\\
+No passo 5 do fluxo principal, se o sistema validar que o agente inseriu um documento fora dos padrões (DD03):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra que o documento não pode ser enviado.
+    \item O sistema mostra os tipos permitidos de documentos e os tamanhos máximos.
+    \item O sistema retorna para a tela de cadastro de oportunidade com os dados já preenchidos.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Erro de envio de arquivo):}\\
+No passo 5 do fluxo principal, se o documento enviado pelo agente tiver um erro de envio:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe uma opção para realizar o envio do documento novamente.
+    \item O fluxo retorna ao passo 4 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (Um ou mais campos obrigatórios em branco):}\\
+No passo 7 do fluxo principal, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente que é necessário o preenchimento de todos os campos obrigatórios.
+    \item O sistema retorna para a tela de cadastro com os dados que o agente preencheu.
+    \item O sistema destaca em vermelho o campo que não foi preenchido.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 4 (RN14 - Exclusivo para manager):}\\
+No passo 7 do fluxo principal, se o sistema validar que o manager inseriu um prazo para realização da proposta inferior ao prazo de recebimento de propostas (RN14):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao manager que ele precisa inserir um prazo para realização da proposta maior ou um prazo para recebimento de propostas menor.
+    \item O sistema retorna para o formulário de cadastro.
+    \item O sistema destaca os campos que precisam ser alterados.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 5 (Valores inválidos):}\\
+No passo 7 do fluxo principal, se o sistema validar que algum dos dados inseridos for inválido (DD03):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente qual campo está inválido.
+    \item O sistema retorna para a tela de cadastro com os dados que o agente preencheu.
+    \item O sistema destaca em vermelho o campo inválido.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU11 - Visualização de ``meus rascunhos de oportunidades''}\\
+\noindent\textbf{Agente:} Agente Público\\ 
+\textbf{Pré-Condições:} O agente está logado no sistema.\\ 
+\textbf{Pós-Condições:} O agente visualiza os seus rascunhos ou o formulário de cadastro de oportunidade.\\
+\textbf{Prioridade:} Média \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O agente acessa a página de ``meus rascunhos''.
+    \item O sistema busca os rascunhos já salvos pelo agente.
+    \item O sistema exibe os rascunhos retornados junto da opção ``Continuar Cadastro'' para cada um e opções de filtro para uma busca refinada.
+    \item O agente clica na opção ``Continuar Cadastro''.
+    \item O sistema resgata as informações do rascunho.
+    \item O sistema direciona o agente para a tela de cadastro de oportunidade com as informações resgatadas (conforme o CdU10).
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Adição de filtros):}\\
+No passo 3 do fluxo principal, se o agente desejar a adição de filtros na busca:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O agente insere os filtros desejados.
+    \item O sistema realiza uma nova busca utilizando os filtros informados.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Nenhum resultado encontrado):}\\
+No passo 2 do fluxo principal ou do fluxo alternativo 1, se a busca não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente que não existem rascunhos de oportunidades salvos que atendam aos critérios de busca.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU12 - Aprovação de Oportunidades}\\
+\noindent\textbf{Agente:} Agente Público (Manager)\\ 
+\textbf{Pré-Condições:} O manager está logado no sistema e existe uma oportunidade pendente de aprovação.\\ 
+\textbf{Pós-Condições:} O manager terá aprovado ou reprovado uma oportunidade.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O manager seleciona uma oportunidade para aprovar.
+    \item O sistema recupera as informações da oportunidade.
+    \item O sistema mostra o formulário da oportunidade com as informações preenchidas.
+    \item O manager completa as informações em falta e edita as que desejar.
+    \item O manager insere as mídias desejadas.
+    \item O sistema valida imediatamente o tamanho e o formato das mídias inseridas.
+    \item O manager aprova a oportunidade.
+    \item O sistema valida as informações inseridas pelo manager.
+    \item O sistema salva as alterações feitas pelo manager, guarda as suas informações e altera o status da oportunidade para aprovada.
+    \item O sistema confirma a aprovação da oportunidade para o manager.
+    \item O sistema retorna para a tela em que o manager estava antes de visualizar o formulário.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Reprovação da oportunidade):}\\
+Nos passos 4 a 6 do fluxo principal, caso o manager decida reprovar a oportunidade:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe a solicitação de justificativa.
+    \item O manager insere a justificativa e confirma a reprovação.
+    \item O sistema valida a justificativa.
+    \item O sistema altera o status da oportunidade para rejeitada e guarda as informações do manager responsável.
+    \item O sistema exibe a confirmação da reprovação da oportunidade.
+    \item O fluxo retorna ao passo 11 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Arquivo fora dos padrões):}\\
+No passo 6 do fluxo principal, se o sistema validar que o manager inseriu um documento fora dos padrões (DD04):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra que o documento não pode ser enviado.
+    \item O sistema mostra os tipos permitidos de documentos e os tamanhos máximos.
+    \item O sistema retorna para o formulário de aprovação com os dados já preenchidos.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Erro de envio de arquivo):}\\
+No passo 6 do fluxo principal, se o documento enviado pelo manager tiver um erro de envio:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe uma opção para realizar o envio do documento novamente.
+    \item O fluxo retorna ao passo 5 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (Um ou mais campos obrigatórios em branco):}\\
+No passo 8 do fluxo principal, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa que é necessário o preenchimento de todos os campos obrigatórios.
+    \item O sistema retorna para o formulário de aprovação com os dados que o manager preencheu.
+    \item O sistema destaca em vermelho o campo que não foi preenchido.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 4 (RN14 - Prazos inválidos):}\\
+No passo 8 do fluxo principal, se o sistema validar que o manager inseriu um prazo para realização da proposta inferior ao prazo de recebimento de propostas (RN14):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao manager que precisa inserir um prazo para realização da proposta maior ou um prazo para recebimento de propostas menor.
+    \item O sistema retorna para o formulário de aprovação.
+    \item O sistema destaca os campos que precisam ser alterados.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 5 (Valores inválidos):}\\
+No passo 8 do fluxo principal, se o sistema validar que algum dos dados inseridos for inválido (DD03):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente qual campo está inválido.
+    \item O sistema retorna para a tela de cadastro com os dados que o agente preencheu.
+    \item O sistema destaca em vermelho o campo inválido.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU13 - Respostas de Perguntas}\\
+\noindent\textbf{Agente:} Agente Público\\ 
+\textbf{Pré-Condições:} O agente está logado no sistema e existe uma pergunta pendente em alguma oportunidade vinculada ao órgão do agente.\\ 
+\textbf{Pós-Condições:} O agente terá respondido ou rejeitado uma pergunta.\\
+\textbf{Prioridade:} Baixa \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O agente público acessa a aba de perguntas pendentes.
+    \item O sistema carrega as perguntas realizadas nas oportunidades do órgão do agente.
+    \item O agente público seleciona uma pergunta para responder.
+    \item O sistema exibe para o agente a opção de responder ou rejeitar a pergunta.
+    \item O agente seleciona a opção de responder à pergunta.
+    \item O sistema exibe um campo para o agente inserir a resposta.
+    \item O agente preenche a resposta e confirma o envio.
+    \item O sistema guarda a resposta e atualiza o status da pergunta para respondida.
+    \item O sistema confirma o envio da resposta.
+    \item O sistema retorna para a aba de perguntas pendentes.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Rejeição da pergunta):}\\
+No passo 4 do fluxo principal, se o agente escolher rejeitar a pergunta:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema solicita uma justificativa para a rejeição.
+    \item O agente insere a justificativa e confirma a rejeição.
+    \item O sistema valida a justificativa.
+    \item O sistema atualiza o status da pergunta para rejeitada.
+    \item O sistema confirma a rejeição da pergunta.
+    \item O sistema retorna para a aba de perguntas pendentes.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU14 - Visualizar ``Minhas Oportunidades''}\\
+\noindent\textbf{Agente:} Agente Público\\ 
+\textbf{Pré-Condições:} O agente está logado no sistema.\\ 
+\textbf{Pós-Condições:} O agente visualiza as oportunidades do seu órgão ou as propostas recebidas para uma determinada oportunidade.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O agente seleciona a opção de visualizar ``minhas oportunidades''.
+    \item O sistema busca as oportunidades do órgão ao qual o agente pertence.
+    \item O sistema exibe as oportunidades retornadas e seus respectivos status.
+    \item O agente seleciona uma das oportunidades.
+    \item O sistema busca as propostas que foram direcionadas àquela oportunidade e resgata os detalhes da mesma.
+    \item O sistema exibe para o agente as propostas recebidas junto dos detalhes da oportunidade.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Nenhuma oportunidade encontrada):}\\
+No passo 2 do fluxo principal, se a busca não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente que não existem oportunidades cadastradas para o seu órgão.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Nenhuma proposta recebida):}\\
+No passo 5 do fluxo principal, se a busca por propostas não retornar resultados:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao agente que não existem propostas realizadas para a oportunidade selecionada.
+    \item O sistema exibe os detalhes da oportunidade normalmente.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (RN22 - Visibilidade das Propostas):}\\
+No passo 5 do fluxo principal, se as informações das propostas ainda não estiver disponível para o agente:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra os detalhes da oportunidade e informa ao agente que ainda não é possível visualizar as informações referentes às propostas.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU15 - Julgamento e Habilitação das Propostas}\\
+\noindent\textbf{Agente:} Agente Público (Manager)\\ 
+\textbf{Pré-Condições:} O manager está logado no sistema e existe uma oportunidade no período de julgamento.\\ 
+\textbf{Pós-Condições:} A proposta terá sido habilitada, rejeitada ou terá sido solicitado o reenvio de documentos.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O manager acessa os detalhes da proposta selecionada.
+    \item O sistema carrega as informações da proposta.
+    \item O sistema exibe as informações e os arquivos relacionados ao autor da proposta junto das opções de aceitar e rejeitar a proposta, e a opção de solicitar que o autor reenvie os documentos necessários.
+    \item O manager seleciona a opção de aceitar a proposta.
+    \item O sistema atualiza as informações da proposta e da oportunidade.
+    \item O sistema exibe a confirmação da aprovação da proposta.
+    \item O sistema retorna para a tela em que o manager estava antes de acessar os dados da proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Visualização de arquivos):}\\
+No passo 4 do fluxo principal, se o manager selecionar um dos arquivos:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema carrega e exibe o documento.
+    \item O manager seleciona o botão de voltar.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 2 (Rejeitar proposta):}\\
+No passo 4 do fluxo principal, se o manager selecionar a opção de rejeitar a proposta:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema solicita uma justificativa para a rejeição.
+    \item O manager insere a justificativa e confirma a rejeição.
+    \item O sistema valida a justificativa.
+    \item O sistema salva a justificativa, atualiza o status daquela proposta e realiza a seleção de uma nova proposta (RN21).
+    \item O sistema retorna para a tela em que o manager estava antes de acessar os dados da proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 3 (Solicitar reenvio de documentos):}\\
+No passo 4 do fluxo principal, se o manager selecionar a opção de solicitar o reenvio de documentos:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema solicita uma justificativa para o reenvio e quais documentos precisam ser enviados novamente.
+    \item O manager insere as informações e confirma a solicitação.
+    \item O sistema valida as informações inseridas pelo manager.
+    \item O sistema guarda as informações enviadas pelo manager.
+    \item O sistema exibe a confirmação da solicitação.
+    \item O sistema retorna para a tela em que o manager estava antes de acessar os dados da proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Erro ao carregar arquivo):}\\
+No passo 1 do fluxo alternativo 1, se o sistema não conseguir carregar ou exibir o arquivo:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa que não foi possível carregar o arquivo.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Um ou mais campos obrigatórios em branco):}\\
+No passo 3 do fluxo alternativo 2 ou do fluxo alternativo 3, se o sistema validar que algum dos campos obrigatórios não foi preenchido:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao manager que é necessário o preenchimento de todos os campos obrigatórios.
+    \item O sistema retorna para a tela anterior com os dados que o manager preencheu.
+    \item O sistema destaca em vermelho o campo que não foi preenchido.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (RN26 - Sem propostas restantes):}\\
+No passo 4 do fluxo alternativo 2, se o sistema validar que não existem mais propostas cadastradas para aquela oportunidade (RN26):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao manager que não existem mais propostas para aquela oportunidade.
+    \item O sistema atualiza o status da oportunidade para finalizada.
+    \item O sistema retorna para a tela em que o manager estava antes de acessar os dados da proposta.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU16 - Reenvio de Documentos}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema, possui uma proposta selecionada, foi solicitado o reenvio de algum documento e o prazo não expirou (RN23).\\ 
+\textbf{Pós-Condições:} O MEI terá reenviado os documentos solicitados.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI seleciona a opção de reenviar os documentos solicitados.
+    \item O sistema carrega e exibe o formulário a ser preenchido.
+    \item O MEI seleciona os documentos que precisam ser enviados.
+    \item O sistema valida imediatamente o tamanho e o formato dos arquivos.
+    \item O MEI confirma o envio do formulário.
+    \item O sistema salva as informações cadastradas pelo MEI.
+    \item O sistema confirma o envio dos documentos.
+    \item O sistema retorna para a tela em que o MEI estava antes de selecionar a opção de reenviar os documentos solicitados.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Arquivo fora dos padrões):}\\
+No passo 4 do fluxo principal, se o sistema validar que o MEI inseriu um documento fora dos padrões (DD02):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra que o documento não pode ser enviado.
+    \item O sistema mostra os tipos permitidos de documentos e os tamanhos máximos.
+    \item O sistema retorna para o formulário com os dados já preenchidos.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Erro de envio de arquivo):}\\
+No passo 4 do fluxo principal, se o documento enviado pelo MEI apresentar um erro de envio:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe uma opção para realizar o envio do documento novamente.
+    \item O fluxo retorna ao passo 3 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (Um ou mais campos obrigatórios em branco):}\\
+No passo 5 do fluxo principal, se o sistema validar que o MEI não preencheu algum dos campos obrigatórios:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao MEI que é necessário o preenchimento de todos os campos obrigatórios.
+    \item O sistema retorna para o formulário com os dados já preenchidos.
+    \item O sistema destaca em vermelho o campo não preenchido.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU17 - Edição de Proposta}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema, possui uma proposta cadastrada e o prazo de submissão de propostas ainda não foi encerrado (RN25).\\ 
+\textbf{Pós-Condições:} O MEI terá editado a sua proposta.\\
+\textbf{Prioridade:} Baixa \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI acessa a opção de edição de propostas.
+    \item O sistema carrega a proposta do MEI e a exibe.
+    \item O MEI altera os campos desejados.
+    \item O MEI insere novos arquivos.
+    \item O sistema valida imediatamente o tamanho e o formato dos arquivos.
+    \item O MEI confirma a alteração da proposta.
+    \item O sistema valida os campos alterados.
+    \item O sistema guarda as novas informações.
+    \item O sistema confirma a edição da proposta.
+    \item O sistema retorna para a tela em que o MEI estava antes de editar a proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Cancelamento da edição):}\\
+Até o passo 6 do fluxo principal, se o MEI cancelar a edição da proposta:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema confirma o cancelamento da edição.
+    \item O sistema retorna para a tela em que o MEI estava antes de editar a proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 1 (Arquivo fora dos padrões):}\\
+No passo 5 do fluxo principal, se o sistema validar que o MEI inseriu um documento fora dos padrões (DD02):
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema mostra que o documento não pode ser enviado.
+    \item O sistema mostra os tipos permitidos de documentos e os tamanhos máximos.
+    \item O sistema retorna para a tela de edição de proposta com os dados já preenchidos.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 2 (Erro de envio de arquivo):}\\
+No passo 4 do fluxo principal, se o documento enviado pelo MEI apresentar um erro de envio:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema exibe uma opção para realizar o envio do documento novamente.
+    \item O fluxo retorna ao passo 4 do fluxo principal.
+\end{enumerate}
+
+\noindent\textbf{Fluxo de Exceção 3 (Um ou mais campos obrigatórios em branco):}\\
+No passo 7 do fluxo principal, se o sistema validar que o MEI deixou algum dos campos obrigatórios em branco:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema informa ao MEI que é necessário o preenchimento de todos os campos obrigatórios.
+    \item O sistema retorna para a tela de edição com os dados já preenchidos.
+    \item O sistema destaca em vermelho o campo não preenchido.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU18 - Remoção de Proposta}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema, possui uma proposta cadastrada e o prazo de submissão de propostas ainda não foi encerrado (RN25).\\ 
+\textbf{Pós-Condições:} O MEI terá removido a sua proposta.\\
+\textbf{Prioridade:} Baixa \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI seleciona a opção de remover a sua proposta.
+    \item O sistema exibe uma solicitação de confirmação, informando as consequências de apagar a proposta.
+    \item O MEI confirma a remoção da proposta.
+    \item O sistema realiza a remoção da proposta no banco de dados.
+    \item O sistema confirma para o MEI que a proposta foi removida.
+    \item O sistema retorna para a tela em que o MEI estava antes de remover a proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Cancelamento da remoção):}\\
+No passo 3 do fluxo principal, se o MEI cancelar a remoção da proposta:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema confirma o cancelamento da remoção da proposta.
+    \item O sistema retorna para a tela em que o MEI estava antes de selecionar a opção de remover a proposta.
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{7pt}
+\noindent\textbf{\normalsize CdU19 - Aceitar/Rejeitar Serviço}\\
+\noindent\textbf{Agente:} Prestador de serviços (MEI)\\ 
+\textbf{Pré-Condições:} O MEI está logado no sistema e possui uma proposta selecionada e aprovada.\\ 
+\textbf{Pós-Condições:} O MEI terá aceitado ou rejeitado a realização do serviço.\\
+\textbf{Prioridade:} Alta \vspace{3pt}\\
+\noindent\textbf{Fluxo Principal:}
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O MEI acessa a proposta aprovada e visualiza as opções ``Aceitar Serviço'' e ``Rejeitar Serviço''.
+    \item O MEI seleciona a opção de ``Aceitar Serviço''.
+    \item O sistema solicita a confirmação de que o MEI deseja aceitar o serviço.
+    \item O MEI confirma que deseja aceitar o serviço.
+    \item O sistema atualiza o status da proposta para aceita.
+    \item O sistema confirma para o MEI que o serviço foi aceito.
+    \item O sistema retorna para a tela de detalhes da proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 1 (Rejeitar Serviço):}\\
+No passo 2 do fluxo principal, se o MEI selecionar a opção ``Rejeitar Serviço'':
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema solicita a confirmação de que o MEI deseja rejeitar o serviço.
+    \item O MEI confirma que deseja rejeitar o serviço.
+    \item O sistema atualiza o status da proposta para rejeitada.
+    \item O sistema confirma para o MEI que o serviço foi rejeitado.
+    \item O sistema retorna para a tela de detalhes da proposta.
+\end{enumerate}
+
+\noindent\textbf{Fluxo Alternativo 2 (Cancelamento da ação):}\\
+Durante o passo 3 do fluxo principal ou o passo 1 do fluxo alternativo 1, se o MEI cancelar a ação:
+\begin{enumerate}[noitemsep, topsep=-5pt, parsep=0pt]
+    \item O sistema confirma que a ação foi cancelada.
+    \item O sistema retorna para a tela de detalhes da proposta.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{10pt}
+\noindent{\large\textbf{Regras de Negócio}}
+\vspace{10pt}
+
+\begin{description}[noitemsep, topsep=0pt, parsep=0.6pt, leftmargin=1.8cm, labelwidth=1.5cm]
+    %\item[\label{rn:01}RN01 -] \textbf{Validação de CPF/CNPJ:} O sistema deve validar os dígitos verificadores do CPF e do CNPJ conforme as normas da Receita Federal.
+    
+    %\item[\label{rn:02}RN02 -] \textbf{Unicidade de CPF/CNPJ e e-mail:} O sistema deve garantir que cada CPF, CNPJ e e-mail cadastrado seja único no sistema. 
+    
+    %\item[\label{rn:03}RN03 -] \textbf{Validação de CEP:} O sistema deve validar o CEP inserido para garantir que este corresponda a um endereço existente. 
+    
+    %\item[\label{rn:04}RN04 -] \textbf{Formato de Telefone:} O sistema deve validar se o telefone segue o padrão nacional. 
+    
+    %\item[\label{rn:05}RN05 -] \textbf{Login:} O login do sistema deve ser feito mediante ``CPF'' e ``senha'' ou através do login do Gov.br. 
+    
+    %\item[\label{rn:06}RN06 -] \textbf{Formato do E-mail:} O sistema deve validar se o texto inserido respeita a sintaxe padrão de endereços de e-mail. 
+    
+    %\item[\label{rn:07}RN07 -] \textbf{Segurança das Senhas:} O sistema deve garantir que as senhas apresentadas pelo usuário correspondam a um padrão mínimo de segurança, como possuir pelo menos 8 caracteres. 
+    
+    %\item[\label{rn:08}RN08 -] \textbf{Confirmação de Senha:} O sistema deve exigir uma confirmação sempre que o usuário desejar criar uma nova senha, garantindo que a senha informada e a sua confirmação possuam exatamente o mesmo valor. 
+    
+    \item[\label{rn:09}RN09 -] \textbf{Cadastro de Oportunidades:} O sistema deve garantir que apenas agentes públicos cadastrem oportunidades no sistema e que um agente público só possa cadastrar oportunidades referentes ao seu respectivo órgão. 
+    
+    \item[\label{rn:10}RN10 -] \textbf{Cadastro de Propostas:} O sistema deve garantir que apenas prestadores de serviço cadastrem propostas nas oportunidades existentes e que cada prestador consiga cadastrar apenas uma proposta para uma determinada oportunidade. 
+    
+    \item[\label{rn:11}RN11 -] \textbf{Prazo para Cadastro de Propostas:} O sistema deve garantir que as propostas sejam cadastradas apenas durante o prazo determinado no cadastro da oportunidade. 
+    
+    \item[\label{rn:12}RN12 -] \textbf{Rascunhos de Propostas:} O sistema deve garantir que um prestador de serviços (MEI) não possua mais de um rascunho para uma mesma oportunidade. 
+    
+    \item[\label{rn:13}RN13 -] \textbf{Cadastro de Agentes Públicos:} O sistema deve garantir que apenas um manager possa cadastrar outro agente público. 
+    
+    \item[\label{rn:14}RN14 -] \textbf{Consistência de Datas:} O sistema deve garantir que a data de início da execução do serviço seja posterior à data limite estabelecida para o recebimento de propostas. 
+    
+    \item[\label{rn:15}RN15 -] \textbf{Realização de Perguntas:} O sistema deve garantir que apenas prestadores de serviço sejam capazes de realizar perguntas nas oportunidades. 
+
+    \item[\label{rn:16}RN16 -] \textbf{Limite de Perguntas ``Em Análise'':} O prestador de serviços pode possuir no máximo três perguntas com status ``Em Análise'' para uma mesma oportunidade. 
+
+    \item[\label{rn:17}RN17 -] \textbf{Resposta de Perguntas:} O sistema deve garantir que apenas agentes públicos sejam capazes de responder a uma pergunta e que haja apenas uma resposta por pergunta. 
+
+    \item[\label{rn:18}RN18 -] \textbf{Tréplica de Perguntas:} O sistema deve garantir que não seja possível para o prestador de serviços responder à resposta de uma pergunta. 
+
+    \item[\label{rn:19}RN19 -] \textbf{Publicidade de Perguntas:} O sistema deve garantir que uma pergunta só se torne pública a partir do momento em que um agente público a responder e que em nenhum momento seja possível identificar o autor da pergunta. 
+
+    \item[\label{rn:20}RN20 -] \textbf{Aprovação de Oportunidades:} Oportunidades criadas por agentes públicos requerem aprovação explícita de um perfil Manager para serem publicadas. Oportunidades criadas por Managers são publicadas automaticamente. 
+
+    \item[\label{rn:21}RN21 -] \textbf{Seleção de Proposta:} Quando o período de cadastro de propostas se encerrar, o sistema irá selecionar a proposta mais vantajosa de acordo com o critério definido na criação da oportunidade. Em caso de empate, a proposta enviada primeiro será a selecionada. 
+
+    \item[\label{rn:22}RN22 -] \textbf{Visibilidade de Informações das Propostas:} As informações relacionadas a uma proposta só serão visíveis para os agentes públicos em duas situações: (1) a proposta foi selecionada como a mais vantajosa e a oportunidade está no período de julgamento; ou (2) a proposta não foi selecionada como a mais vantajosa, mas a oportunidade já foi finalizada. 
+
+    \item[\label{rn:23}RN23 -] \textbf{Período para Atualização da Documentação:} Durante o período de julgamento, caso sejam constatadas pendências documentais relacionadas aos arquivos enviados pelo prestador de serviços no ato de realização das propostas, este possuirá 5 dias úteis para atualizar a documentação. Será aceito apenas o envio de novas versões dos documentos já submetidos. Para os demais documentos, o prazo de atualização é de 2 dias úteis. 
+
+    \item[\label{rn:24}RN24 -] \textbf{Publicidade das Propostas:} Todas as propostas feitas em uma oportunidade serão visíveis para todos os usuários apenas após a oportunidade ser finalizada. 
+
+    \item[\label{rn:25}RN25 -] \textbf{Edição/Exclusão das Propostas:} Durante o período de submissão de propostas de uma oportunidade, o MEI pode editar ou remover a sua proposta. 
+
+    \item[\label{rn:26}RN26 -] \textbf{Oportunidade sem Propostas:} Caso uma oportunidade não tenha recebido nenhuma proposta durante o período de submissão, ela será finalizada quando o prazo se encerrar. O mesmo ocorrerá caso, após a rejeição de uma proposta no período de julgamento, não houver outras propostas aptas para seleção. 
+\end{description}
+
+
+
+\vspace{10pt}
+\noindent{\large\textbf{Dicionários de Dados}}
+\vspace{10pt}
+
+% ---------------------------------------------------
+% DD02 - Cadastro de Proposta
+% ---------------------------------------------------
+
+\begin{quadro}[h]
+\centering
+\caption{DD02 - Cadastro de Proposta}
+\label{tab:dd02}
+\renewcommand{\arraystretch}{1.5}
+\resizebox{\linewidth}{!}{%
+\begin{NiceTabular}{p{4cm} l p{5cm} c p{4cm}}[hvlines]
+\toprule
+\textbf{Campo} & \textbf{Tipo} & \textbf{Tamanho/Formato} & \textbf{Obrigatoriedade} & \textbf{Regra/Observação} \\ \midrule
+Descrição & Texto & - & Sim & - \\ 
+Orçamento & Numérico & Valor monetário entre 1.00 e 81000.00 & Sim & - \\ 
+Prazo de entrega de serviço & Numérico & Limite de 121 dias & Sim & - \\ 
+Prova de regularidade com a Fazenda & Documento & PDF, JPG, PNG & Sim & Limite de 10 arquivos com 5MB cada \\ 
+Exibição de trabalhos anteriores & Documento & PDF, JPG, PNG & Não & Limite de 10 arquivos com 5MB cada \\ 
+Perfil do prestador de serviços & Perfil & - & Sim & Realizado de maneira automática \\ \bottomrule
+\end{NiceTabular}%
+}
+\end{quadro}
+
+
+% ---------------------------------------------------
+% DD04 - Cadastro de Agentes Públicos
+% ---------------------------------------------------
+
+%\vspace{15pt}
+
+%\begin{quadro}[h]
+%\centering
+%\caption{DD04 - Cadastro de Agentes Públicos}
+%\label{tab:dd04}
+%\resizebox{\linewidth}{!}{%
+%\begin{tabular}{ll p{5cm} c p{4cm}}
+%\toprule
+%\textbf{Campo} & \textbf{Tipo} & \textbf{Tamanho/Formato} & \textbf{Obrigatoriedade} & \textbf{Regra/Observação} \\ \midrule
+%Nome completo & Texto & T. Máximo: 255 caracteres & Sim & - \\ 
+%CPF & Numérico & 11 dígitos \newline (XXX.XXX.XXX-XX) & Sim & RN01, RN02 \\ 
+%Órgão de Origem & Choice & - & Sim & - \\ 
+%Cargo & Choice & - & Sim & - \\ 
+%Email & Texto & x@y.com \newline T. Máximo: 254 caracteres & Sim & RN06 \\ 
+%Senha & Texto & Entre 8 e 128 caracteres & Sim & RN07, RN08 \\ \bottomrule
+%\end{tabular}%
+%}
+%\end{quadro}
+
+%\clearpage
+
+% ---------------------------------------------------
+% DD01 - Dados de cadastro do MEI
+% ---------------------------------------------------
+
+%\begin{sidewaysquadro}[htbp]
+%\centering
+%\caption{DD01 - Dados de cadastro do MEI}
+%\label{tab:dd01}
+%\resizebox{\linewidth}{!}{%
+%\begin{tabular}{ll p{5cm} c p{6cm}}
+%\toprule
+%\textbf{Campo} & \textbf{Tipo} & \textbf{Tamanho/Formato} & \textbf{Obrigatoriedade} & \textbf{Regra/Observação} \\ \midrule
+%Nome Completo & Texto & T. Máximo: 255 caracteres & Sim & Apenas letras \newline Editável \\ 
+%CPF & Numérico & 11 dígitos \newline (XXX.XXX.XXX-XX) & Sim & RN01, RN02 \\ 
+%Telefone & Numérico & 15 dígitos \newline (XX) XXXXX-XXXX ou \newline (XX) XXXX-XXXX & Sim & RN04 \newline Editável \\ 
+%Nome Fantasia & Texto & T. Máximo: 255 caracteres & Sim & Editável \\ 
+%CNAE Principal & Choice & - & Sim & Editável \\ 
+%CNPJ & Numérico & 14 dígitos \newline XX.XXX.XXX/XXXX-XX & Sim & RN01, RN02 \\ 
+%CEP & Numérico & 8 dígitos \newline XXXXX-XX & Sim & RN03, RN05 \newline Editável \\ 
+%Endereço & Texto & T. Máximo: 128 caracteres & Sim & RN03, RN05 \newline Editável \\ 
+%Número & Texto & T. Máximo: 16 caracteres & Sim & Editável \\ 
+%Bairro & Texto & T. Máximo: 64 caracteres & Sim & RN03, RN05 \newline Editável \\ 
+%Município & Choice & - & Sim & RN03, RN05 \newline Editável \\ 
+%Email & Texto & x@y.com \newline T. Máximo: 254 caracteres & Sim & RN06 \newline Editável \\ 
+%Senha & Texto & Entre 8 e 128 caracteres & Sim & RN07, RN08 \newline Não é preenchido no cadastro com Gov.br \\ 
+%Complemento & Texto & T. Máximo: 128 caracteres & Não & Editável \\ \bottomrule
+%\end{tabular}%
+%}
+%\end{sidewaysquadro}
+
+%\clearpage
+
+% ---------------------------------------------------
+% DD03 - Cadastro de Oportunidade
+% ---------------------------------------------------
+
+\begin{quadro}[htbp]
+\centering
+\caption{DD03 - Cadastro de Oportunidade}
+\label{tab:dd03}
+\renewcommand{\arraystretch}{1.5}
+\resizebox{\linewidth}{!}{%
+\begin{NiceTabular}{p{4cm} p{4cm} p{4cm} c p{4cm}}[hvlines]
+\toprule
+\textbf{Campo} & \textbf{Tipo} & \textbf{Tamanho/Formato} & \textbf{Obrigatoriedade} & \textbf{Regra/Observação} \\ \midrule
+Título da Oportunidade & Choice & - & Sim & - \\ 
+Órgão & - & - & Sim & Completado pelo sistema \\ 
+%CPF do Preponente & Numérico & 11 dígitos \newline (XXX.XXX.XXX-XX) & Sim & Precisa estar cadastrado no sistema \\ 
+%CEP & Numérico & 8 dígitos \newline XXXXX-XX & Sim & - \\ 
+%Rua & Texto & T. Máximo: 128 caracteres & Sim & - \\ 
+%Número & Texto & T. Máximo: 16 caracteres & Sim & - \\ 
+%Bairro & Texto & T. Máximo: 64 caracteres & Sim & - \\ 
+%Município & Choice & - & Sim & - \\ 
+%Complemento & Texto & T. Máximo: 128 caracteres & Não & - \\ 
+Data limite para executar serviço & Data & XX/XX/XXXX \newline Limite de 180 dias & Sim & RN14 \newline Apenas manager preenche \\ 
+Valor previsto & Monetário & Valor monetário entre 1.00 e 12000.00 & Sim & - \\ 
+Prazo para recebimento de propostas & Numérico & Limite de 60 dias & Sim & RN14 \newline Apenas manager preenche \\ 
+Descrição da oportunidade & Texto & Entre 15 e 300 caracteres & Sim & - \\ 
+Justificativa de oportunidade & Texto & Entre 15 e 300 caracteres & Sim & - \\ 
+Mídias & Fotos (PNG, JPG, JPEG) & Limite de 10 arquivos com 5MB cada & Não & - \\ \bottomrule
+\end{NiceTabular}%
+}
+\end{quadro}
+
+\clearpage
+

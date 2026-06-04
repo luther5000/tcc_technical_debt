@@ -1,0 +1,85 @@
+\begin{figure}[h!]
+    \label{fig:percepcao_geral}
+    \centering
+    \caption{Percepção geral da equipe sobre o nível de implementação das funcionalidades avaliadas.}
+    \vspace{-1em}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \footnotesize
+        \begin{axis}[
+            xbar stacked,
+            width=11cm,
+            height=6cm, 
+            xmin=0, xmax=7, 
+            xtick={0,1,2,3,4,5,6,7}, 
+            xlabel={Número de Respondentes},
+            ylabel={Casos de Uso Avaliados},
+            symbolic y coords={{CdU 15 (Preliminar)}, {CdU 08 (Intermediário)}, {CdU 03 (Avançado)}, {CdU 01 (Avançado)}},
+            ytick=data,
+            axis x line*=bottom,
+            axis y line*=left,
+            xmajorgrids=true,
+            grid style={dashed, gray!30},
+            bar width=18pt,
+            legend style={
+                at={(0.5,-0.27)}, 
+                anchor=north, 
+                xshift=-1.5cm,
+                legend columns=3, 
+                draw=none,
+                /tikz/every even column/.append style={column sep=0.5cm}
+            },
+            nodes near coords={
+                \pgfmathfloatifflags{\pgfplotspointmeta}{0}{}{\pgfmathprintnumber{\pgfplotspointmeta}}
+            },
+            nodes near coords align={center},
+            every node near coord/.append style={font=\footnotesize\bfseries, text=black!80},
+        ]
+        
+        % Votos 1: Nada / Não Implementado (Muted Red)
+        \addplot[fill=mutedRed, draw=mutedRed!80!black, thick] coordinates {
+            (0,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (1,{CdU 08 (Intermediário)})
+            (0,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 2 (Muted Orange)
+        \addplot[fill=mutedOrange, draw=mutedOrange!80!black, thick] coordinates {
+            (0,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (1,{CdU 08 (Intermediário)})
+            (2,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 3 (Muted Yellow)
+        \addplot[fill=mutedYellow, draw=mutedYellow!80!black, thick] coordinates {
+            (4,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (1,{CdU 08 (Intermediário)})
+            (2,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 4 (Muted Light Green)
+        \addplot[fill=mutedLGreen, draw=mutedLGreen!80!black, thick] coordinates {
+            (1,{CdU 01 (Avançado)}) 
+            (4,{CdU 03 (Avançado)}) 
+            (1,{CdU 08 (Intermediário)})
+            (3,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 5: Totalmente Implementado (Muted Dark Green)
+        \addplot[fill=mutedDGreen, draw=mutedDGreen!80!black, thick] coordinates {
+            (2,{CdU 01 (Avançado)}) 
+            (3,{CdU 03 (Avançado)}) 
+            (3,{CdU 08 (Intermediário)})
+            (0,{CdU 15 (Preliminar)})
+        };
+        
+        \legend{1 -- Nada Implementado, 2 -- Pouco Implementado, 3 -- Parcialmente Implementado, 4 -- Muito Implementado, 5 - Totalmente Implementado}
+        \end{axis}
+    \end{tikzpicture}
+    }
+    
+    {\footnotesize\textbf{Fonte:} Elaborado pelo autor.}
+\end{figure}

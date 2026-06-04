@@ -1,0 +1,85 @@
+\begin{figure}[htpb]
+    \centering
+    \begin{tikzpicture}
+        \footnotesize
+        \begin{axis}[
+            xbar stacked,
+            width=12cm,
+            height=6cm, 
+            xmin=0, xmax=7, % Mantido para seus 7 respondentes
+            xtick={0,1,2,3,4,5,6,7}, 
+            xlabel={Número de Respondentes},
+            ylabel={Casos de Uso Avaliados},
+            symbolic y coords={{CdU 15 (Preliminar)}, {CdU 08 (Intermediário)}, {CdU 03 (Avançado)}, {CdU 01 (Avançado)}},
+            ytick=data,
+            axis x line*=bottom,
+            axis y line*=left,
+            xmajorgrids=true,
+            grid style={dashed, gray!30},
+            bar width=18pt,
+            % Legenda centralizada para 5 itens
+            legend style={
+                at={(0.5,-0.22)}, 
+                anchor=north, 
+                xshift=-1.5cm,
+                legend columns=3, % Ficará em 2 linhas
+                draw=none,
+                /tikz/every even column/.append style={column sep=0.5cm}
+            },
+            nodes near coords={
+                \pgfmathfloatifflags{\pgfplotspointmeta}{0}{}{\pgfmathprintnumber{\pgfplotspointmeta}}
+            },
+            nodes near coords align={center},
+            every node near coord/.append style={font=\footnotesize\bfseries, text=black!80},
+        ]
+        
+        % Votos 1: Não Contribuiria (Vermelho)
+        \addplot[fill=mutedRed, draw=mutedRed!80!black, thick] coordinates {
+            (0,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (0,{CdU 08 (Intermediário)})
+            (0,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 2 (Laranja)
+        \addplot[fill=mutedOrange, draw=mutedOrange!80!black, thick] coordinates {
+            (1,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (0,{CdU 08 (Intermediário)})
+            (0,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 3 (Amarelo)
+        \addplot[fill=mutedYellow, draw=mutedYellow!80!black, thick] coordinates {
+            (0,{CdU 01 (Avançado)}) 
+            (0,{CdU 03 (Avançado)}) 
+            (1,{CdU 08 (Intermediário)})
+            (0,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 4 (Verde Claro)
+        \addplot[fill=mutedLGreen, draw=mutedLGreen!80!black, thick] coordinates {
+            (2,{CdU 01 (Avançado)}) 
+            (1,{CdU 03 (Avançado)}) 
+            (0,{CdU 08 (Intermediário)})
+            (1,{CdU 15 (Preliminar)})
+        };
+        
+        % Votos 5: Contribuiria Muito (Verde Escuro)
+        \addplot[fill=mutedDGreen, draw=mutedDGreen!80!black, thick] coordinates {
+            (4,{CdU 01 (Avançado)}) 
+            (6,{CdU 03 (Avançado)}) 
+            (6,{CdU 08 (Intermediário)})
+            (6,{CdU 15 (Preliminar)})
+        };
+        
+        % Alteramos a legenda para refletir a nova pergunta
+        \legend{1 -- Não contribuiria, 2 -- Contribuiria Pouco, 3 -- Contribuiria Moderadamente, 4 -- Contribuiria Bastante, 5 -- Contribuiria muito}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Percepção da equipe sobre o grau em que a documentação contribuiria para a execução de suas tarefas diárias.}
+    \label{fig:contribuicao_documentacao}
+
+    \vspace{3pt}
+    {\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{figure}

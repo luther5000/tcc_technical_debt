@@ -1,0 +1,37 @@
+\begin{quadro}[h!]
+    \centering
+    \caption{Exemplo de especificação textual de um Caso de Uso para a funcionalidade de saque}
+    \label{qua:exemplo_caso_de_uso}
+    
+    \fcolorbox{black}{backcolour}{% 
+        \begin{minipage}{0.9\textwidth}\small%
+            \vspace{3pt}%
+            \noindent\textbf{\normalsize CdU1 - Efetuar saque em caixa eletrônico}\vspace{5pt}\\
+            \textbf{Agente:} Cliente\\
+            \textbf{Pré-Condições:}
+            \begin{itemize}[topsep=0pt]
+                \itemsep0em
+                \item O terminal do caixa eletrônico deve estar operante, conectado à rede bancária e abastecido com cédulas. 
+                \item O cliente deve possuir um cartão válido e conhecer sua respectiva credencial de acesso (senha).
+            \end{itemize}
+            \textbf{Fluxo Principal:}
+            \begin{enumerate}[topsep=0pt]
+                \itemsep0em
+                \item O cliente insere o cartão no terminal do caixa eletrônico.
+                \item O sistema faz a leitura do cartão e solicita e apresenta o menu de operações.
+                \item O cliente seleciona a opção "Saque".
+                \item O sistema solicita a inserção do valor desejado.
+                \item O cliente informa o valor a ser sacado.
+                \item O sistema verifica a disponibilidade do saldo na conta, o limite de saque diário do cliente e a quantidade de cédulas disponíveis no terminal.
+                \item O sistema registra a transação e deduz o valor solicitado do saldo da conta do cliente.
+                \item O sistema dispensa as cédulas correspondentes no compartimento de saída.
+                \item O sistema ejeta o cartão e encerra a sessão.
+            \end{enumerate}
+            \textbf{Fluxo de Exceção (Saldo Insuficiente):}\\
+            No passo 8, caso o cliente não possua saldo ou limite diário suficiente, o sistema exibe uma mensagem informativa e ejeta o cartão.
+        \end{minipage}
+    }
+
+    \vspace{5pt}
+    \hspace*{0.75cm}\raggedright{\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{quadro}

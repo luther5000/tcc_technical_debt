@@ -1,0 +1,82 @@
+\documentclass[10pt]{beamer}
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{pgf-pie}
+
+\definecolor{mutedRed}{HTML}{FF3B30}    % Vermelho vivo e forte
+\definecolor{mutedOrange}{HTML}{FF9500} % Laranja puro e aceso
+\definecolor{mutedYellow}{HTML}{FFCC00} % Amarelo vibrante, mas legível
+\definecolor{mutedLGreen}{HTML}{4CD964} % Verde claro bem aceso
+\definecolor{mutedDGreen}{HTML}{00A844} % Verde escuro saturado e vivo
+\definecolor{mutedGray}{HTML}{999999}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{doublearrow} = [thick, <->, >=stealth]
+
+\usepackage{booktabs}
+
+\makeatletter
+\AtBeginSection[]{
+  \begin{frame}[plain, c]
+    \sectionpage
+  \end{frame}
+}
+\makeatother
+
+% Suas informações
+\title{Dívida Técnica na Documentação de Software e seus Impactos na Cobertura de Testes}
+\subtitle{Um Relato de Experiência no Sistema de Fomento ao Microempreendedor}
+\date{Abril de 2026}
+\author{Lutero Lima Goulart}
+\institute{Centro de Informática -- Universidade Federal da Paraíba (UFPB) \\ Orientadora: Prof. Dr. Yuska Paola Costa Aguiar}
+
+\titlegraphic{
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south east, xshift=-0.5cm, yshift=0.8cm] at (current page.south east) {
+      \includegraphics[width=2cm]{imagens/logo.jpg} % Substitua pelo nome exato do seu arquivo
+    };
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Roteiro}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\include{1_introducao}
+
+\include{2_contextualizacao}
+
+\include{3_metodologia}
+
+\include{4_resultados}
+
+\include{5_conclusao}
+
+\begin{frame}[standout]
+  Obrigado!\\
+  \vspace{1em}
+  \normalsize Dúvidas?
+\end{frame}
+
+\end{document}

@@ -1,0 +1,106 @@
+\section{Resultados e Análises}
+
+\begin{frame}{Artefators Formalizados e Análise de Rastreabilidade}
+
+    \begin{table}[h]
+        \caption{Artefatos formalizados}
+        \begin{center}
+            \begin{tabular}{lc}
+                \toprule
+                \textbf{Categoria do Artefato} & \textbf{Quantidade} \\
+                \midrule
+                Casos de Uso (CdU) & 19 \\
+                Regras de Negócio (RN) & 26 \\
+                Dicionários de Dados (DD) & 4 \\
+                \bottomrule
+            \end{tabular}
+        \end{center}
+        
+    {\footnotesize \textbf{Fonte:} Elaborado pelo autor.}
+  \end{table}
+
+    \begin{table}[h]
+        \caption{Análise de rastreabilidade dos requisitos}
+        \begin{center}
+            \begin{tabular}{lccc}
+                \toprule
+                \textbf{Escopo Analisado} & \textbf{Total Mapeado} & \textbf{Sem Testes} & \textbf{Déficit} \\
+                \midrule
+                Casos de Uso & 19 & 15 & $\approx 79\%$ \\
+                Fluxos Comportamentais & 79 & 65 & $\approx 82\%$ \\
+                \bottomrule
+            \end{tabular}
+    
+            {\footnotesize \textbf{Fonte:} Elaborado pelo autor.}
+        \end{center}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Cobertura de Testes dos 4 CdUs}
+    \input{graficos/cobertura_fluxo_por_CdU}
+\end{frame}
+
+\begin{frame}{A Perspectiva Humana sobre a Dívida}
+  \textbf{O cenário percebido:}
+  \begin{itemize}
+    \item A equipe desenvolvia e validava o SFM sem uma documentação formal.
+    \item Não existe a elaboração de casos de teste sem que haja antes a implementação da funcionalidade, promovendo uma baixa cobertura dos requisitos elicitados.
+    \item A equipe de \textit{design} assume o papel de analistas de requisitos.
+  \end{itemize}
+
+  \vspace{1.0em}
+
+  \textbf{A Investigação de Percepção (O Questionário):}
+  \begin{itemize}
+    \item Como os desenvolvedores enxergavam a completude do sistema trabalhando sob essa Dívida Técnica?
+    \item Qual o impacto real da introdução desses novos artefatos na rotina de trabalho?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Distribuição de Participantes nas Equipes do SFM}
+    \input{graficos/pie_participation}
+\end{frame}
+
+\begin{frame}{Percepção Geral Sobre a Implementação das Funcionalidades}
+    \input{graficos/percepcao_geral_funcionalidades} 
+    %{\small \textbf{Fonte:} Elaborado pelo autor.}
+\end{frame}
+
+\begin{frame}{Percepção Sobre a Implementação do CdU 1}
+    \input{graficos/cdu1}
+    
+    \textbf{Discussão:} O CdU 01 mostra que decisões baseadas puramente na observação visual induzem a equipe e a gestão ao erro. 
+\end{frame}
+
+\begin{frame}{Percepção Sobre a Implementação do CdU 3}
+    \input{graficos/cdu3}
+\end{frame}
+
+\begin{frame}{Percepção Sobre a Implementação do CdU 8}
+    \input{graficos/cdu8}
+\end{frame}
+
+\begin{frame}{Percepção Sobre a Implementação do CdU 15}
+    \input{graficos/cdu15}
+\end{frame}
+
+\begin{frame}{Discussão: O Gargalo na Qualidade}
+  \textbf{A Dívida na Etapa de Testes:}
+  \begin{itemize}
+    \item A equipe de QA precisava aguardar a codificação completa para iniciar o planejamento e a escrita dos testes.
+    \item Essa abordagem tardia e estritamente manual não é escalável e inviabiliza a futura automação.
+  \end{itemize}
+
+  \vspace{1em}
+  
+  \textbf{O Maior Risco Identificado:}
+  \begin{itemize}
+    \item A validação ocorria apenas quando a funcionalidade já estava totalmente construída.
+    \item O perigo central não reside em falhas de código (\textit{bugs}), mas na possibilidade de implementar premissas que não correspondem às reais necessidades do projeto.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{A Aceitação da Documentação}
+    \input{graficos/aceitacao_documentacao}
+\end{frame}
+
