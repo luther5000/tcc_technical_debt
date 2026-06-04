@@ -13,7 +13,7 @@ A dívida técnica de documentação ocorre quando a documentação de um sistem
 
 ## Estrutura do Repositório
 
-* `/src` ou `/` (ajuste conforme sua pasta): Arquivos fonte em LaTeX (`.tex`, `.bib`, imagens, etc.).
+* `/src` Arquivos fonte em LaTeX (`.tex`, `.bib`, imagens, etc.).
 * `/slides`: Apresentação utilizada na defesa (em LaTeX Beamer).
 * `tcc_final.pdf` : Versão final da monografia compilada para leitura direta.
 * `tcc_slides.pdf`: Versão final dos slides compilada para visualização.
